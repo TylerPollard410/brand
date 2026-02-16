@@ -4,6 +4,15 @@
 # Quarto extension example render artifacts
 /example.html
 /example_files/
+/INSTRUCTIONS.html
+/INSTRUCTIONS_files/
+/_quarto_internal_scss_error.scss
+
+# R local session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
 
 # macOS
 .DS_Store

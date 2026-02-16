@@ -1,0 +1,162 @@
+meta:
+  name: Tyler Pollard
+  description: "Statistician and operations research analyst focused on Bayesian modeling, predictive analytics, and data visualization."
+  link:
+    # home: https://your-domain.com # TODO: add your main site URL
+    github: https://github.com/TylerPollard410
+    linkedin: https://www.linkedin.com/in/tyler-pollard-763b8315b/
+    email: mailto:tylerpollard410@gmail.com
+
+logo:
+  # Shared assets for Quarto + Bootstrap/Shiny projects.
+  images:
+    icon:
+      path: logos/tyler-pollard-icon.png
+      alt: "Tyler Pollard icon"
+    header-logo:
+      path: logos/tyler-pollard-header-logo.png
+      alt: "Tyler Pollard"
+    header-logo-dark:
+      path: logos/tyler-pollard-header-logo-dark.png
+      alt: "Tyler Pollard dark"
+    header-logo-light:
+      path: logos/tyler-pollard-header-logo-light.png
+      alt: "Tyler Pollard light"
+  small: icon
+  medium: header-logo
+    # light: header-logo-on-light
+    # dark: header-logo-on-dark
+  large: header-logo
+    # If you add dedicated variants later:
+    # dark: header-logo-on-dark
+    # light: header-logo-on-light
+
+color:
+  palette:
+    # Core neutrals
+    ink: "#202020"          # deep indigo / near-black (dark backgrounds)
+    paper: "#f8f8f8"        # soft off-white (light backgrounds)
+    white: "#FFFFFF"        # pure white (for accents, highlights, and contrast
+    black: "#000000"        # pure black (for accents, highlights, and contrast)
+
+    # Miami Vice / retro core
+    tp-purple: "#6B2EFF"  # saturated but printable purple
+    tp-pink: "#FF5BC8"    # neon pink accent
+    tp-teal: "#00E5D4"    # cyan-teal accent 
+    tp-cyan: "#03c7e8"
+    tp-green: "#6fff00ff"
+
+    # Sports + analytics warmth
+    tp-orange: "#FF7A1A"
+    tp-gold: "#FFC857"
+
+    # Utility
+    muted-gray: "#7A728C"
+    tp-gray: "#303030"
+    tp-second: "#404040"
+
+  # Theme roles
+  # Leave foreground/background unset so flatly/darkly keep distinct light/dark body colors.
+  foreground:
+    light: ink
+    dark: paper
+  background:
+    light: paper
+    dark: ink
+
+  primary: tp-purple
+  secondary: tp-cyan
+  tertiary: tp-teal
+
+  success: tp-green
+  info: tp-gold
+  warning: tp-orange
+  danger: tp-pink
+
+  light: 
+    light: paper
+    dark: ink
+  dark: 
+    light: ink
+    dark: paper
+
+typography:
+  fonts:
+    # Primary brand font (retro-modern, excellent numerals)
+    - family: Space Grotesk
+      source: google
+      weight: [400, 500, 600, 700]
+      style: [normal]
+
+    # Monospace for code, stats, tables
+    - family: JetBrains Mono
+      source: google
+      weight: [400, 600]
+      style: [normal, italic]
+
+  base:
+    family: Space Grotesk
+    weight: 400
+    size: 1rem
+    line-height: 1.5
+    # color intentionally inherited from the active Bootstrap theme
+
+  headings:
+    family: Space Grotesk
+    weight: 600
+    line-height: 1.2
+    color: tp-pink
+
+  monospace:
+    family: JetBrains Mono
+    weight: 400
+    size: 0.9em
+
+  monospace-inline:
+    color: tp-orange
+    background-color: 
+      light: rgba(var(--bs-dark-rgb), 0.2)
+      dark: rgba(var(--bs-light-rgb), 0.2)
+
+  monospace-block:
+    color: tp-orange
+    #background-color: ink
+    line-height: 1.4
+
+  link:
+    weight: 600
+    color: tp-gold
+    decoration: underline
+
+defaults:
+  bootstrap:
+    # Bootstrap 5 placeholders (safe to keep empty until needed)
+    # defaults:
+    rules: |
+      /* Global navbar logo sizing (applies to Quarto + bslib Bootstrap navbars) */
+      .navbar-brand .navbar-logo,
+      .navbar-brand img {
+        max-height: 48px;
+        width: auto;
+      }
+    # functions: ""
+    # mixins: ""
+  quarto:
+    format:
+      # Quarto format placeholders (keep allowed formats only)
+      html:
+        title-block-banner: "var(--brand-tp-cyan)"
+        title-block-banner-color: "var(--bs-body-color)"
+      # dashboard: {}
+      # revealjs: {}
+      # typst:
+        # papersize: us-letter
+  shiny:
+    # Shiny/bslib placeholders
+    theme:
+      preset: bootstrap
+      version: 5
+      #defaults:
+        #bslib-dashboard-design: false
+      #rules: |
+      #  .navbar-brand { color: $brand-pink }

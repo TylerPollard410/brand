@@ -70,13 +70,13 @@ color:
 
   background: "#f0f0f0" # The main background color. Tyically will be close to white and must have high contrast with the foreground color.
   foreground: "#222222" # The main text color. Typically will be close to black and must have high contrast with the background color.
-  primary: purple #"#0d6efd" # The primary accent color, used for hyperlinks, active states, and primary action buttons.
-  secondary: cyan #"#6c757d" # The secondary accent color, often used for lighter text or disabled states.
+  primary: purple # The primary accent color, used for hyperlinks, active states, and primary action buttons.
+  secondary: cyan # The secondary accent color, often used for lighter text or disabled states.
   tertiary: gray-200 # The tertiary accent color, used for hover states, accents, and wells.
-  success: green #"#198754" # The color used for positive or successful actions and information.
-  info: teal #"#0dcaf0" # The color used for neutral or informational actions and information.
-  warning: yellow #"#ffc107" # The color used for warning or cautionary actions and information.
-  danger: pink #"#dc3545" # The color used for errors, dangerous actions, or negative information.
+  success: green # The color used for positive or successful actions and information.
+  info: orange # The color used for neutral or informational actions and information.
+  warning: yellow # The color used for warning or cautionary actions and information.
+  danger: pink # The color used for errors, dangerous actions, or negative information.
   light: white # A bright color, used as a high-contrast foreground color on dark elements or low-contrast background color on light elements.
   dark: gray-800 # A dark color, used as a high-contrast foreground color on light elements or high-contrast background color on light elements.
 
@@ -105,7 +105,7 @@ typography:
     family: Space Grotesk
     weight: 600
     line-height: 1.2
-    color: pink
+    color: var(--bs-danger-text-emphasis)
 
   monospace:
     family: JetBrains Mono
@@ -113,17 +113,16 @@ typography:
     size: 0.9em
 
   monospace-inline:
-    color: orange
-    background-color: rgba(var(--bs-dark-rgb), 0.2)
+    color: var(--bs-info-text-emphasis)
+    background-color: rgba(var(--bs-dark-rgb), 0.1)
 
   monospace-block:
-    color: orange
-    #background-color: ink
+    color: var(--bs-info-text-emphasis)
     line-height: 1.4
 
   link:
     weight: 600
-    color: yellow
+    color: primary
     decoration: underline
 
 defaults:

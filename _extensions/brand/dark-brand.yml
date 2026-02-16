@@ -68,17 +68,17 @@ color:
     gray-900: "#212529"
     black:    "#000"
 
-  background: "#000000" # The main background color. Tyically will be close to white and must have high contrast with the foreground color.
-  foreground: "#ffffff" # The main text color. Typically will be close to black and must have high contrast with the background color.
-  primary: purple #"#0d6efd" # The primary accent color, used for hyperlinks, active states, and primary action buttons.
-  secondary: cyan #"#6c757d" # The secondary accent color, often used for lighter text or disabled states.
+  background: "#121212" # The main background color. Tyically will be close to white and must have high contrast with the foreground color.
+  foreground: "#f2f2f2" # The main text color. Typically will be close to black and must have high contrast with the background color.
+  primary: purple # The primary accent color, used for hyperlinks, active states, and primary action buttons.
+  secondary: cyan # The secondary accent color, often used for lighter text or disabled states.
   tertiary: gray-700 # The tertiary accent color, used for hover states, accents, and wells.
-  success: green #"#198754" # The color used for positive or successful actions and information.
-  info: teal #"#0dcaf0" # The color used for neutral or informational actions and information.
-  warning: yellow #"#ffc107" # The color used for warning or cautionary actions and information.
-  danger: pink #"#dc3545" # The color used for errors, dangerous actions, or negative information.
-  light: gray-800 # A bright color, used as a high-contrast foreground color on dark elements or low-contrast background color on light elements.
-  dark: white # A dark color, used as a high-contrast foreground color on light elements or high-contrast background color on light elements.
+  success: green # The color used for positive or successful actions and information.
+  info: orange # The color used for neutral or informational actions and information.
+  warning: yellow # The color used for warning or cautionary actions and information.
+  danger: pink # The color used for errors, dangerous actions, or negative information.
+  light: white # A bright color, used as a high-contrast foreground color on dark elements or low-contrast background color on light elements.
+  dark: gray-800 # A dark color, used as a high-contrast foreground color on light elements or high-contrast background color on light elements.
 
 typography:
   fonts:
@@ -105,7 +105,7 @@ typography:
     family: Space Grotesk
     weight: 600
     line-height: 1.2
-    color: pink
+    color: danger
 
   monospace:
     family: JetBrains Mono
@@ -113,17 +113,16 @@ typography:
     size: 0.9em
 
   monospace-inline:
-    color: orange
-    background-color: rgba(var(--bs-light-rgb), 0.2)
+    color: info
+    background-color: rgba(var(--bs-light-rgb), 0.14)
 
   monospace-block:
-    color: orange
-    #background-color: ink
+    color: info
     line-height: 1.4
 
   link:
     weight: 600
-    color: yellow
+    color: warning
     decoration: underline
 
 defaults:
@@ -131,6 +130,11 @@ defaults:
     # Bootstrap 5 placeholders (safe to keep empty until needed)
     defaults:
       version: 5
+      # Force dark-surface derivations when compiling standalone dark brand CSS
+      body-emphasis-color: "#f2f2f2"
+      body-secondary-bg: "#2b2b2b"
+      body-tertiary-bg: "#1f1f1f"
+      border-color: "#4f4f4f"
     rules: |
       /* Global navbar logo sizing (applies to Quarto + bslib Bootstrap navbars) */
       .navbar-brand .navbar-logo,
@@ -145,7 +149,7 @@ defaults:
       # Quarto format placeholders (keep allowed formats only)
       html:
         title-block-banner: "var(--bs-cyan)"
-        title-block-banner-color: "var(--bs-body-color)"
+        title-block-banner-color: "var(--bs-dark)"
       # dashboard: 
       # revealjs: 
       # typst:

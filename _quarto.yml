@@ -9,9 +9,9 @@ brand:
 format:
   html:
     theme:
-      light: 
+      dark: 
         - default
         - brand
-      dark: 
+      light: 
         - default
         - brand
