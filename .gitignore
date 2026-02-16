@@ -1,0 +1,9 @@
+/.quarto/
+**/*.quarto_ipynb
+
+# Quarto extension example render artifacts
+/example.html
+/example_files/
+
+# macOS
+.DS_Store
