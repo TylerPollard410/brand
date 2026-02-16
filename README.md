@@ -27,6 +27,25 @@ You can override this per project by setting `project.brand` or top-level `brand
 
 Note: this extension uses top-level `brand` metadata (instead of `project.brand`) to keep split files working with current Quarto extension loading behavior.
 
+## Editing Shared + Mode Data
+
+Edit the source files:
+
+- `_extensions/brand/src/shared-brand.yml` for values shared by both modes
+- `_extensions/brand/src/light-overrides.yml` for light-only overrides
+- `_extensions/brand/src/dark-overrides.yml` for dark-only overrides
+
+Then regenerate full standalone brand files:
+
+```bash
+_extensions/brand/scripts/build-brand.rb
+```
+
+This writes:
+
+- `_extensions/brand/light-brand.yml`
+- `_extensions/brand/dark-brand.yml`
+
 ## Example
 
 Here is the source code for a minimal example: [example.qmd](example.qmd).

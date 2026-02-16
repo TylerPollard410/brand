@@ -6,6 +6,7 @@ contributes:
   metadata:
     # Keep separate light/dark brand files while avoiding extension parser issues
     # with `project.brand` objects in current Quarto.
+  #project: 
     brand:
       light: _extensions/brand/light-brand.yml
       dark: _extensions/brand/dark-brand.yml
