@@ -1,51 +1,81 @@
-# Brand Extension For Quarto
+# Brand Extension for Quarto
 
-_TODO_: Add a short description of your extension.
+Reusable brand extension for Quarto projects, websites, HTML docs, and Bootstrap/Shiny apps.
 
-## Installing
+## Install
 
 ```bash
-quarto add TylerPollard410/brand
+quarto add TylerPollard410/brand --no-prompt
 ```
 
-This will install the extension under the `_extensions` subdirectory.
-If you're using version control, you will want to check in this directory.
+This installs files under `_extensions/TylerPollard410/brand`.
 
-## Using
+## Use in a project
 
-This extension installs a [brand.yml](https://posit-dev.github.io/brand-yml/) configuration for _your organization name_.
+The extension ships two standalone brand files:
 
-This extension contributes separate light/dark brand files:
+- `_extensions/TylerPollard410/brand/light-brand.yml`
+- `_extensions/TylerPollard410/brand/dark-brand.yml`
+
+To use both in a consuming repo, set `brand.light` and `brand.dark` in `_quarto.yml`:
 
 ```yaml
 brand:
-  light: _extensions/brand/light-brand.yml
-  dark: _extensions/brand/dark-brand.yml
+  light: _extensions/TylerPollard410/brand/light-brand.yml
+  dark: _extensions/TylerPollard410/brand/dark-brand.yml
+
+format:
+  html:
+    theme:
+      light: [default, brand]
+      dark: [default, brand]
 ```
 
-You can override this per project by setting `project.brand` or top-level `brand` in your own `_quarto.yml`.
+Note: the extension metadata defaults `project.brand` to `light-brand.yml` for compatibility, but explicit `brand.light`/`brand.dark` in your project is the recommended setup.
 
-Note: this extension uses top-level `brand` metadata (instead of `project.brand`) to keep split files working with current Quarto extension loading behavior.
+## Keep an existing `_brand.yml`
 
-## Editing Shared + Mode Data
+Use Quarto profiles so you can switch between your existing brand file and this extension:
 
-Edit the source files:
+```yaml
+# _quarto.yml
+project:
+  type: website
 
-- `_extensions/brand/src/shared-brand.yml` for values shared by both modes
-- `_extensions/brand/src/light-overrides.yml` for light-only overrides
-- `_extensions/brand/src/dark-overrides.yml` for dark-only overrides
+brand: _brand.yml
+```
 
-Then regenerate full standalone brand files:
+```yaml
+# _quarto-extension.yml
+brand:
+  light: _extensions/TylerPollard410/brand/light-brand.yml
+  dark: _extensions/TylerPollard410/brand/dark-brand.yml
+```
+
+Then render/preview with:
 
 ```bash
-_extensions/brand/scripts/build-brand.rb
+quarto render --profile extension
 ```
 
-This writes:
+## Update workflow (publish + consume)
 
-- `_extensions/brand/light-brand.yml`
-- `_extensions/brand/dark-brand.yml`
+1. Edit files in this repo (`_extensions/brand/light-brand.yml`, `_extensions/brand/dark-brand.yml`, `_extensions/brand/_extension.yml`).
+2. Bump `version` in `_extensions/brand/_extension.yml`.
+3. Commit and push to GitHub.
+4. In the consuming repo, run:
+
+```bash
+quarto update extension TylerPollard410/brand --no-prompt
+```
+
+If Quarto reports `[No Change]`, remove the installed folder and add again:
+
+```bash
+rm -rf _extensions/TylerPollard410/brand
+quarto add TylerPollard410/brand --no-prompt
+```
 
 ## Example
 
-Here is the source code for a minimal example: [example.qmd](example.qmd).
+See [example.qmd](example.qmd) for a minimal extension demo.
